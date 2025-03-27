@@ -10,6 +10,9 @@ routes.get('/signup',(req,res)=>{
 routes.get('/login',(req,res)=>{
     return res.render("login")
 })
+routes.get('/forgetPassword',(req,res)=>{
+    return res.render("forgetPassword");
+})
 
 
 module.exports=routes;
