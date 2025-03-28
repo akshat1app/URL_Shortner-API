@@ -80,8 +80,23 @@ async function HandleUserOTP(req, res) {
     const mailOptions = {
       from: "akshat9090.fzd@gmail.com",
       to: email,
-      subject: "OTP Verification",
-      text: `Your OTP is ${otp}`,
+      subject: "Welcome to the Email Notification System",
+      text: `Hi this is your OTP ${otp},  
+
+          Welcome to our Notification System!  
+
+          This is a test email to verify that your Nodemailer setup is working correctly.  
+          Please find the attached **Holiday Calendar** for reference.
+
+          Best Regards,
+          Akshat
+          `,
+          attachments: [
+            {
+              filename: 'Resume_Akshat.pdf', 
+              path: '/home/user/NodeJs /URL_Shortner/Document/Resume_Akshat.pdf', 
+            }
+          ]
     };
     const info = await transporter.sendMail(mailOptions);
     console.log("email sent", info.response);
